@@ -11,6 +11,6 @@ pipeline{
                 sh 'mvn package'
             }
         }
-    }
+    }higit 
 }
 
