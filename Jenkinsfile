@@ -27,7 +27,7 @@ pipeline{
                     sh 'mvn clean package sonar:sonar'
                 }
             }
-        }stage{
+        }stage(
             steps{
                 rtMavenDeployer{
                     id: 'jfrog',
@@ -37,7 +37,7 @@ pipeline{
                 }
 
             }
-        }
+        )
         
         
         
