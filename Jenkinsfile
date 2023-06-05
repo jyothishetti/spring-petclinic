@@ -21,6 +21,13 @@ pipeline{
                 junit '**/surefire-reports/*.xml'
             }
         }
+        stage('sonar scanner'){
+            steps{
+                withsonarQubeEnv ('sonar'){
+                    sh 'mvn clean package sonar:sonar'
+                }
+            }
+        }
         
         
         
