@@ -30,7 +30,7 @@ pipeline{
         }
         stage('jfroh pushing'){
             steps{
-                rtmavenDeployer (
+                rtMavenDeployer (
                     id: 'jfrog',
                     serverid: 'artifactory-server-id',
                     releaseRepo: 'joo-libs-libs-release-local',
