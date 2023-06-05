@@ -32,7 +32,7 @@ pipeline{
             steps{
                 rtMavenDeployer (
                     id: 'MAVEN_DEPLOYER',
-                    serverid: 'jfrog',
+                    serverId: 'jfrog',
                     releaseRepo: 'joo-lib-libs-release-local',
                     snapshotRepo: 'joo-lib-libs-snapshot-local'
                 )
