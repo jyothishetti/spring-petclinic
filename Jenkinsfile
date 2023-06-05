@@ -27,6 +27,16 @@ pipeline{
                     sh 'mvn clean package sonar:sonar'
                 }
             }
+        }stage{
+            steps{
+                rtMavenDeployer{
+                    id: 'jfrog',
+                    serverid: 'artifactory-server-id',
+                    releaseRepo: 'joo-libs-libs-release-local',
+                    snapshotRepo: 'joo-libs-libs-snapshot-local'
+                }
+
+            }
         }
         
         
