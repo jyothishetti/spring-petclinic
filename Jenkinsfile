@@ -11,6 +11,20 @@ pipeline{
                 sh 'mvn package'
             }
         }
-    }higit 
+        stage('archive artifacts'){
+            steps{
+                archiveArtifacts artifacts: 'target/*.jar'
+            }
+        }
+        stage('testunit'){
+            steps{
+                junit '**/surefire-reports/*.xml'
+            }
+        }
+        
+        
+        
+
+    }
 }
 
