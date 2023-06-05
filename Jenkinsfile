@@ -27,17 +27,21 @@ pipeline{
                     sh 'mvn clean package sonar:sonar'
                 }
             }
-        }stage(
+        }
+        stage('jfroh pushing'){
             steps{
-                rtMavenDeployer{
+                rtmavenDeployer (
                     id: 'jfrog',
                     serverid: 'artifactory-server-id',
                     releaseRepo: 'joo-libs-libs-release-local',
                     snapshotRepo: 'joo-libs-libs-snapshot-local'
-                }
-
+                )
             }
-        )
+        }
+
+
+            
+        
         
         
         
